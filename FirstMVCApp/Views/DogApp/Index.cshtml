@@ -1,0 +1,32 @@
+﻿@*
+    Model and Information has been passed from Controller->
+    Now the type of object that the View expects to be passed to it is the from the DogViewModel->
+*@
+@*
+    the @-Model becomes an object that now can be used to display the fields
+*@
+
+
+@*
+    Since a List is being used, set the model to a list and create a for loop to show all the information
+*@
+
+@model List<FirstMVCApp.Models.DogViewModel> // @ sign tells compiler it is C# and not HTML
+
+
+
+<h1>Dogs</h1>
+
+<ul>
+    @foreach(var dog in Model)  // Model is now the list, so it can be looped through
+    {
+        <li>@dog.Name:
+        <ul>
+            <li>Description: @dog.Description</li> <!--at(Model) grabbing information from controller and using it here-->
+            <li>Age: @dog.Age</li>
+        </ul>
+    
+
+    </li>
+    }
+</ul>

@@ -1,0 +1,50 @@
+﻿@model FirstMVCApp.Models.DogViewModel
+
+@*
+    Linking the controller data to the view is called DATA BINDING
+*@
+
+<h1>Create</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-6"> <!-- Ctrl + K + D to format HTML indentations-->
+
+        <div class="card"> <!--Card formatting style, makes all this info format into a card-->
+            <div class="card-header">
+                <h5>Add Dog</h5>
+                <hr />
+                <div class="card-body">
+                    <!--form needs to be linked to correct endpoint so that data can be recieved-->
+                    <form asp-controller="DogApp" asp-action="CreateDog" method="post"> <!--asp controller defines the controller that is being used, asp action defines the action that the form is linked to, method defines whether the form post(create) or get(read)
+
+                        <!--Creating a form that will be sent to the dog list-->
+                        <div class="mb-3">
+                            <label class="form-label">Dog Name</label>
+                            <input asp-for=Name type="text" class="form-control " /> <!--asp-for sets which property will be linked to which input-->
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <input asp-for=Description type="text" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Age</label>
+                            <input asp-for=Age type="number" class="form-control" />
+                        </div>
+                       
+                        <div class="mb-3"> <!--mb-3 adds spaces between each div-->
+                            <button class="btn btn-primary" type="submit">Add</button> <!--class will format the look of the button and set it to primary color--><!--button of type submit, will submit a form-->
+                        </div>
+                    </form>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
